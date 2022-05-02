@@ -11,13 +11,18 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@swc/core": "^1.2.174",
     "autoprefixer": "^10.4.5",
     "browser-sync": "^2.27.9",
     "cssnano": "^5.1.7",
+    "del": "^6.0.0",
     "gulp": "^4.0.2",
+    "gulp-livereload": "^4.0.2",
     "gulp-postcss": "^9.0.1",
+    "gulp-pug": "^5.0.0",
     "gulp-rename": "^2.0.0",
     "gulp-sass": "^5.1.0",
+    "gulp-swc": "^1.2.3",
     "postcss": "^8.4.13",
     "sass": "^1.51.0"
   }
