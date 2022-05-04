@@ -26,6 +26,11 @@ const paths = {
     src: 'assets/**/*.pug',
     dest: 'dest',
     dist: 'dist'
+  },
+  image: {
+    src: 'assets/images/**',
+    dest: 'dest/images',
+    dist: 'dist/images'
   }
 }
 
@@ -87,6 +92,28 @@ function pugToHtmlMin() {
     .pipe(dest(paths.html.dist))
 }
 
+// 图片压缩
+const imagemin = require('gulp-imagemin')
+function image (path) {
+  path = path ? path : paths.image.dest
+  console.log(path)
+  return function imageMin() {
+    return src(paths.image.src)
+    .pipe(imagemin())
+    .pipe(dest(path))
+  }
+}
+
+// 雪碧图
+// const spritesmith = require('gulp.spritesmith')
+// function sprite () {
+//   return gulp.src(paths.image.src)
+//     .pipe(spritesmith({
+//       imgName: 'sprite.png',
+//       cssName: 'sprite.css'
+//     })).pipe(gulp.dest(paths.image.dest))
+// }
+
 // clean
 const del = require('del')
 function cleanDest(cb) {
@@ -106,9 +133,9 @@ function watchStyle() {
   watch(
     [paths.styles.src, paths.javascript.src],
     { events: ['all', 'ready'] },
-    series(cleanDest, pugToHtml, javascript, style, reload)
+    series(cleanDest, pugToHtml, javascript, style, image(), reload)
   )
 }
 
 exports.default = watchStyle
-exports.build = series(cleanDist, parallel(pugToHtmlMin, javascriptMin, styleMin))
+exports.build = series(cleanDist, parallel(pugToHtmlMin, javascriptMin, styleMin, image(paths.image.dist)))
