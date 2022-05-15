@@ -8,7 +8,10 @@ const rename = require('gulp-rename')
 
 // 浏览器
 const browserSync = require('browser-sync').create()
-const reload = browserSync.reload
+function reload (cb) {
+  browserSync.reload()
+  cb()
+}
 
 // 路径
 const paths = {
