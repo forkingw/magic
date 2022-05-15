@@ -2,5 +2,12 @@
 
 // bling
 @import "bling/puffIn.scss";
+@import "bling/puffOut";
+@import "bling/vanishIn";
+@import "bling/vanishOut";
+
+// boing
+@import "boing/boingInUp";
+@import "boing/boingOutDown";
 
 @import "magictime.scss";

@@ -134,7 +134,7 @@ function watchStyle() {
     }
   })
   watch(
-    [paths.styles.src, paths.javascript.src],
+    [paths.html.src, paths.styles.src, paths.javascript.src],
     { events: ['all', 'ready'] },
     series(cleanDest, pugToHtml, javascript, style, image(), reload)
   )

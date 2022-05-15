@@ -1,13 +1,13 @@
-.puffIn {
-  animation-name: puffIn;
+.vanishIn {
+  animation-name: vanishIn;
 }
 
-@keyframes puffIn {
+@keyframes vanishIn {
   0% {
     opacity: 0;
     transform-origin: 50% 50%;
     transform: scale(2, 2);
-    filter: blur(2px);
+    filter: blur(90px);
   }
   100% {
     opacity: 1;
