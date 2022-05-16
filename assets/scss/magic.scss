@@ -10,4 +10,14 @@
 @import "boing/boingInUp";
 @import "boing/boingOutDown";
 
+// bomb
+@import "bomb/bombLeftOut";
+@import "bomb/bombRightOut";
+
+// magic_effects
+@import "magic_effects/magic";
+@import "magic_effects/swap";
+@import "magic_effects/twisterInDown";
+@import "magic_effects/twisterInUp";
+
 @import "magictime.scss";
